@@ -19,12 +19,20 @@ public class MyString {
     /** Returns the lowercase version of the given string. */
     public static String lowerCase(String str) {
         // Replace the following statement with your code
-        return null;
+
+        char[] chars = str.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            if (Character.isUpperCase(chars[i])) {
+                chars[i] = Character.toLowerCase(chars[i]);
+            }
+        }
+        return new String(chars);
     }
 
     /** If str1 contains str2, returns true; otherwise returns false. */
     public static boolean contains(String str1, String str2) {
         // Replace the following statement with your code
-        return false;
+        int index = str1.indexOf(str2);
+        return index!= -1;
     }
 }
