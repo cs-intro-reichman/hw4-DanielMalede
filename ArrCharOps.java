@@ -206,27 +206,50 @@ public class ArrCharOps {
      */
     public static int compareTo(String str1, String str2) {
         // Replace the following statement with your code
-        int sumStr1 = 0;
-        int sumStr2 = 0;
-
-        for (int i = 0; i < Math.min(str1.length(), str2.length()); i++) {
-            char char1 = str1.charAt(i);
-            char char2 = str2.charAt(i);
-            if (char1 < char2) {
-                sumStr2++;
-            }
-            if (char1 > char2) {
-                sumStr1++;
-            }
+        if (str1 == null || str2 == null) {
+            return -2;
         }
-        if (sumStr1 < sumStr2) {
-            return -1;
-        } else if (sumStr1 > sumStr2) {
-            return 1;
-        } else if (sumStr1 == sumStr2) {
+        char[] arr1 = str1.toCharArray();
+        char[] arr2 = str2.toCharArray();
+        int len = Math.min(arr1.length, arr2.length);
+        if (str1.length() == str2.length()) {
+            for (int i = 0; i < str1.length(); i++) {
+                if (str1.charAt(i) < str2.charAt(i)) {
+                    return -1;
+                } else {
+                    if (str1.charAt(i) > str2.charAt(i)) {
+                        return 1;
+                    }
+
+                }
+            }
             return 0;
         }
-        return -2; // Error with input
+
+        if (str1.length() < str2.length()) {
+            for (int i = 0; i < str1.length(); i++) {
+                if (str1.charAt(i) < str2.charAt(i)) {
+                    return -1;
+                } 
+                else{
+                    return 1;
+                }
+            }
+            return 0;
+        }
+        if (str1.length() > str2.length()) {
+            for (int i = 0; i < str2.length(); i++) {
+                if (str1.charAt(i) < str2.charAt(i)) {
+                    return -1;
+                } 
+                else{
+                    return 1;
+                }
+            }
+            return 0;
+        }
+
+        return 0;
 
     }
 }
