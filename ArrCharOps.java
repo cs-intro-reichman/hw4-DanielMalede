@@ -206,7 +206,7 @@ public class ArrCharOps {
      */
     public static int compareTo(String str1, String str2) {
         // Replace the following statement with your code
-        if (str1 == null || str2 == null) {
+        if (str1.length() == 0 || str2.length() == 0) {
             return -2;
         }
         int len = Math.min(str1.length(), str2.length());
