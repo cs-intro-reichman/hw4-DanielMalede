@@ -209,47 +209,24 @@ public class ArrCharOps {
         if (str1 == null || str2 == null) {
             return -2;
         }
-        char[] arr1 = str1.toCharArray();
-        char[] arr2 = str2.toCharArray();
-        int len = Math.min(arr1.length, arr2.length);
-        if (str1.length() == str2.length()) {
-            for (int i = 0; i < str1.length(); i++) {
-                if (str1.charAt(i) < str2.charAt(i)) {
-                    return -1;
-                } else {
-                    if (str1.charAt(i) > str2.charAt(i)) {
-                        return 1;
-                    }
+        
+        int len = Math.min(str1.length(), str2.length());
+        for (int i = 0; i < len; i++) {
+            char str1Char = str1.charAt(i);
+            char str2Char = str2.charAt(i);
 
-                }
+            if (str1Char > str2Char) {
+                return 1;
+            } else if (str1Char < str2Char) {
+                return -1;
             }
-            return 0;
-        }
-
-        if (str1.length() < str2.length()) {
-            for (int i = 0; i < str1.length(); i++) {
-                if (str1.charAt(i) < str2.charAt(i)) {
-                    return -1;
-                } 
-                else{
-                    return 1;
-                }
-            }
-            return 0;
         }
         if (str1.length() > str2.length()) {
-            for (int i = 0; i < str2.length(); i++) {
-                if (str1.charAt(i) < str2.charAt(i)) {
-                    return -1;
-                } 
-                else{
-                    return 1;
-                }
-            }
-            return 0;
+            return 1;
+        } else if (str1.length() < str2.length()) {
+            return -1;
         }
-
         return 0;
-
     }
+
 }
