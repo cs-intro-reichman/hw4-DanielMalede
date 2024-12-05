@@ -170,7 +170,7 @@ public class ArrCharOps {
             return 0;
         }
         for (int i = 0; i < arr.length; i++) {
-            result += arr[i] * Math.pow(7, arr.length - 1 -i);
+            result += arr[i] * Math.pow(7, arr.length - 1 - i);
         }
         return result;
     }
@@ -210,29 +210,23 @@ public class ArrCharOps {
         int sumStr2 = 0;
 
         for (int i = 0; i < Math.min(str1.length(), str2.length()); i++) {
-            int str1Number1 = (int) str1.charAt(i);
-            int str2Number2 = (int) str2.charAt(i);
-            if (str1Number1 < str2Number2) {
+            char char1 = str1.charAt(i);
+            char char2 = str2.charAt(i);
+            if (char1 < char2) {
                 sumStr2++;
             }
-            if (str1Number1 > str2.charAt(i)) {
+            if (char1 > char2) {
                 sumStr1++;
-            } else {
-                sumStr1++;
-                sumStr2++;
             }
-        }
-        if (sumStr1 == sumStr2) {
-            return 0;
         }
         if (sumStr1 < sumStr2) {
             return -1;
-        }
-        if (sumStr1 > sumStr2) {
+        } else if (sumStr1 > sumStr2) {
             return 1;
+        } else if (sumStr1 == sumStr2) {
+            return 0;
         }
-        else {
-            return -2;
-        }
+        return -2; // Error with input
+
     }
 }
