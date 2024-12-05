@@ -209,15 +209,11 @@ public class ArrCharOps {
         if (str1 == null || str2 == null) {
             return -2;
         }
-        
         int len = Math.min(str1.length(), str2.length());
         for (int i = 0; i < len; i++) {
-            char str1Char = str1.charAt(i);
-            char str2Char = str2.charAt(i);
-
-            if (str1Char > str2Char) {
+            if (str1.charAt(i) > str2.charAt(i)) {
                 return 1;
-            } else if (str1Char < str2Char) {
+            } else if (str1.charAt(i) < str2.charAt(i)) {
                 return -1;
             }
         }
