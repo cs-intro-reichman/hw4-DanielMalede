@@ -165,12 +165,12 @@ public class ArrCharOps {
      */
     public static long hashCode(char[] arr) {
         // Replace the following statement with your code
-        long result = 0;
+        int result = 0;
         if (arr.length == 0) {
             return 0;
         }
         for (int i = 0; i < arr.length; i++) {
-            result = arr[i] * 7 ^ (arr.length - 1);
+            result += arr[i] * Math.pow(7, arr.length - 1 -i);
         }
         return result;
     }
