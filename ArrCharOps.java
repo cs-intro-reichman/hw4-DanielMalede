@@ -13,15 +13,15 @@ public class ArrCharOps {
         // System.out.println(lastIndexOf(arr1, 'l'));
         // System.out.println(concat(arr1, arr2));
         // System.out.println(subArray(arr2, 2, 9));
-        // System.out.println(compareTo("abcd", "abcd"));
-        // System.out.println(compareTo("abc", "abcd"));
-        // System.out.println(compareTo("abw", "abcd"));
-        // System.out.println(compareTo("Abcd", "a"));
-        // System.out.println(compareTo("apple", "banana"));
-        // System.out.println(compareTo("apple", "applepie"));
-        // System.out.println(compareTo("Zoo", "zoo"));
-        System.out.println(hashCode(arr1));
-        System.out.println(hashCode(arr2));
+        System.out.println(compareTo("abcd", "abcd"));
+        System.out.println(compareTo("abc", "abcd"));
+        System.out.println(compareTo("abw", "abcd"));
+        System.out.println(compareTo("Abcd", "a"));
+        System.out.println(compareTo("apple", "banana"));
+        System.out.println(compareTo("apple", "applepie"));
+        System.out.println(compareTo("Zoo", "zoo"));
+        // System.out.println(hashCode(arr1));
+        // System.out.println(hashCode(arr2));
     }
 
     /** Prints the given array of characters, and moves the cursor to the next line.
@@ -177,7 +177,17 @@ public class ArrCharOps {
      */
     public static int compareTo(String str1, String str2) {
         // Replace the following statement with your code
-        
-        return 0;
+        for (int i = 0; i < Math.min(str1.length(), str2.length()); i++) {
+            if (str1.charAt(i) < str2.charAt(i)) {
+                return -1;
+            }
+            if (str1.charAt(i) > str2.charAt(i)) {
+                return 1;
+            }   
+            if (str1.length() == str2.length()) {
+                return 0;
+            }
+        }
+        return -2;
     }
 }
